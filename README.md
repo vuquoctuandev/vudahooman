@@ -1,2 +1,2 @@
-# Hi. Curious about me? see some of my personal projects below
+# Hi. Curious about me? see some of my personal projects below:
  
