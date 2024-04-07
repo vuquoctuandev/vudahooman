@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nhập vào 2 số a và b (a &lt; b)</title>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function calculateSum() {
+            let a = parseInt(document.getElementById("inputA").value);
+            let b = parseInt(document.getElementById("inputB").value);
+            let sum = 0;
+
+            if (a >= b) {
+                alert("a must be less than b");
+                return;
+            }
+
+            for (let i = a; i <= b; i++) {
+                if (isPrime(i)) {
+                    sum += i;
+                }
+            }
+
+            document.getElementById("result").innerHTML = "Tong cac so nguyen to trong khoang tu " + a + " den " + b + " la: " + sum;
+        }
+    </script>
+</head>
+<body>
+    <h1>nhập vào 2 số a và b (a &lt; b)</h1>
+    <label for="inputA">Nhap a:</label>
+    <input type="number" id="inputA"><br>
+    <label for="inputB">Nhap b:</label>
+    <input type="number" id="inputB"><br>
+    <button onclick="calculateSum()">Tinh tong so nguyen to</button>
+    <p id="result"></p>
+</body>
+</html>
